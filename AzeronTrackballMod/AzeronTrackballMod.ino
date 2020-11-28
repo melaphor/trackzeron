@@ -1,10 +1,15 @@
 /*
   Derived from
-   Azeron Simplified Firmware for XIM Apex by W11cE, 2019: https://github.com/W11cE/Azeron-Simplified-Firmware-for-XIM-Apex (kept button variable names) 
-   Sherbet Firmware by Colin Fein, 2019: https://gist.github.com/Billiam/ec4ccf967088edef36e67010839f3dd1#file-sherbet-ino
+   Azeron Simplified Firmware for XIM Apex by W11cE, 2019: 
+   https://github.com/W11cE/Azeron-Simplified-Firmware-for-XIM-Apex (kept button variable names) 
+   
+   Sherbet Firmware by Colin Fein, 2019: 
+   https://gist.github.com/Billiam/ec4ccf967088edef36e67010839f3dd1#file-sherbet-ino
 
  Libraries used:
-  PMW3360 Module Library for Arduino by Sunjun Kim: https://www.arduino.cc/reference/en/libraries/pmw3360-module/
+  PMW3360 Module Library for Arduino by Sunjun Kim: 
+  https://www.arduino.cc/reference/en/libraries/pmw3360-module/
+  
   Bounce2 Library by Thomas Fredericks:
   https://github.com/thomasfredericks/Bounce2
 */
