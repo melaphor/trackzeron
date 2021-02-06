@@ -2,7 +2,7 @@
 
 This repository contains source code and prebuilt firmware files for a modified Azeron keypad.
 
-![](https://user-images.githubusercontent.com/16569424/100494538-c1777000-3110-11eb-9ec2-77b605f7d627.jpg)
+![](https://user-images.githubusercontent.com/16569424/100494538-c1777000-3110-11eb-9ec2-77b605f7d627.jpg | width=300)
 Thanks to the staff at Azeron for sharing my modification and dual keypad setup on their social media! People had questions about the mod, so I compiled this document.
 
 If you have any other questions, you can message me in Azeron’s Discord.
