@@ -4,12 +4,12 @@ This repository contains source code and prebuilt firmware files for a modified 
 
 ![](https://user-images.githubusercontent.com/16569424/107110059-db20ec00-6812-11eb-9fe6-563b27339a3a.jpg)
 
-***Thanks to the staff at Azeron for sharing my modification and dual keypad setup on their social media! People had questions about the mod, so I compiled this document.
+***Thanks to the staff at Azeron for sharing my modification and dual keypad setup on their social media! People had questions about the mod, so I compiled this document.***
 
-***If you have any other questions, you can message me in Azeron’s Discord.
+***If you have any other questions, you can message me in Azeron’s Discord.***
 
-***Kind regards,
-***MK
+***Kind regards,***
+***MK***
 
 ## Answers to questions:
 
