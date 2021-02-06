@@ -87,7 +87,8 @@ Load into VIA using *Design > Load Draft Definition*
 - M2.5 machine screws x2 (idk what length.. I used the thumb rail screws)
 
 ### Preparing
--   Remove the Azeron palmrest to reveal the Teensy Board![Azeron-unchanged](https://user-images.githubusercontent.com/16569424/107108978-5b8f1f00-680a-11eb-86c0-2a26af66000b.png)
+-   Remove the Azeron palmrest to reveal the Teensy Board
+[Azeron-unchanged](https://user-images.githubusercontent.com/16569424/107108978-5b8f1f00-680a-11eb-86c0-2a26af66000b.png)
     
 -   Disconnect the thumbstick, thumb button and D-pad from the Teensy board and grounding block.  
     ![Azeron-removethumb](https://user-images.githubusercontent.com/16569424/107108984-706bb280-680a-11eb-9773-adbbb86909cb.png)
