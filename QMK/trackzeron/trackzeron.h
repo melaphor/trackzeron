@@ -1,4 +1,7 @@
-/* Copyright 2020 MK
+/* Copyright 2020 Christopher Courtney, aka Drashna Jael're  (@drashna) <drashna@live.com>
+ * Copyright 2019 Sunjun Kim
+ * Copyright 2020 Ploopy Corporation
+ * Copyright 2020 MK
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,27 +20,14 @@
 #pragma once
 
 #include "quantum.h"
-
-//MK added for trackzeron - copied from drashna's trackball.h
-
 #include "spi_master.h"
-#include "pmw3600.h"
+#include "pmw3360.h"
 #include "analog.h"
 #include "pointing_device.h"
 
 void process_mouse(report_mouse_t* mouse_report);
 void process_mouse_user(report_mouse_t* mouse_report, int16_t x, int16_t y);
-void process_wheel(report_mouse_t* mouse_report);
-void process_wheel_user(report_mouse_t* mouse_report, int16_t h, int16_t v);
 
-/* This is a shortcut to help you visually see your layout.
- *
- * The first section contains all of the arguments representing the physical
- * layout of the board and position of the keys.
- *
- * The second converts the arguments into a two-dimensional array which
- * represents the switch matrix.
- */
 #define LAYOUT( \
      k01, k02,           \
      k11, k12, k13, k14, \
@@ -51,3 +41,17 @@ k30, k31, k32, k33, k34, \
     {k30,   k31, k32,   k33,   k34}, \
     {KC_NO, k41, k42,   k43,   k44} \
 }
+
+typedef union {
+  uint32_t raw;
+  struct {
+    uint8_t    dpi_config;
+  };
+} keyboard_config_t;
+
+extern keyboard_config_t keyboard_config;
+
+enum ploopy_keycodes {
+    DPI_CONFIG = SAFE_RANGE,
+    PLOOPY_SAFE_RANGE,
+};

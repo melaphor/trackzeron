@@ -1,5 +1,6 @@
-/* Copyright 2019 Drashna Jael're (@drashna)
+/* Copyright 2020 Christopher Courtney, aka Drashna Jael're  (@drashna) <drashna@live.com>
  * Copyright 2019 Sunjun Kim
+ * Copyright 2020 Ploopy Corporation
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -14,6 +15,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 #pragma once
 
 #include "spi_master.h"
@@ -69,7 +71,7 @@
 #define REG_Raw_Data_Burst  0x64
 #define REG_LiftCutoff_Tune2  0x65
 
-#ifdef SPI_DEBUG
+#ifdef CONSOLE_ENABLE
 void print_byte(uint8_t byte);
 #endif
 

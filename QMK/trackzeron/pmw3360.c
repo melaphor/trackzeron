@@ -1,5 +1,6 @@
-/* Copyright 2019 Drashna Jael're (@drashna)
+/* Copyright 2020 Christopher Courtney, aka Drashna Jael're  (@drashna) <drashna@live.com>
  * Copyright 2019 Sunjun Kim
+ * Copyright 2020 Ploopy Corporation
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,10 +17,12 @@
  */
 
 
-#include "pmw3600.h"
-#include "pmw3600_firmware.h"
-#include <print.h>
+#include "pmw3360.h"
+#include "pmw3360_firmware.h"
 
+#ifdef CONSOLE_ENABLE
+#    include "print.h"
+#endif
 bool _inBurst = false;
 
 #ifndef PMW_CPI
@@ -28,21 +31,12 @@ bool _inBurst = false;
 #ifndef SPI_DIVISOR
 #    define SPI_DIVISOR 2
 #endif
+#ifndef ROTATIONAL_TRANSFORM_ANGLE
+#    define ROTATIONAL_TRANSFORM_ANGLE 0x00
+#endif
 
-static const int8_t ROTATIONAL_TRANSFORM_ANGLE = 20;
-
-#ifdef SPI_DEBUG
-void print_byte(uint8_t byte) {
-  uprintf("%c%c%c%c%c%c%c%c|", \
-    (byte & 0x80 ? '1' : '0'), \
-    (byte & 0x40 ? '1' : '0'), \
-    (byte & 0x20 ? '1' : '0'), \
-    (byte & 0x10 ? '1' : '0'), \
-    (byte & 0x08 ? '1' : '0'), \
-    (byte & 0x04 ? '1' : '0'), \
-    (byte & 0x02 ? '1' : '0'), \
-    (byte & 0x01 ? '1' : '0'));
-}
+#ifdef CONSOLE_ENABLE
+void print_byte(uint8_t byte) { dprintf("%c%c%c%c%c%c%c%c|", (byte & 0x80 ? '1' : '0'), (byte & 0x40 ? '1' : '0'), (byte & 0x20 ? '1' : '0'), (byte & 0x10 ? '1' : '0'), (byte & 0x08 ? '1' : '0'), (byte & 0x04 ? '1' : '0'), (byte & 0x02 ? '1' : '0'), (byte & 0x01 ? '1' : '0')); }
 #endif
 
 
@@ -128,7 +122,6 @@ bool pmw_spi_init(void) {
 
     pmw_upload_firmware();
 
-    spi_write_adv(REG_Angle_Tune, constrain(ROTATIONAL_TRANSFORM_ANGLE, -30, 30));
     spi_stop_adv();
 
     wait_ms(10);
@@ -141,6 +134,8 @@ bool pmw_spi_init(void) {
 
 void pmw_upload_firmware(void) {
     spi_write_adv(REG_Config2, 0x00);
+
+    spi_write_adv(REG_Angle_Tune, constrain(ROTATIONAL_TRANSFORM_ANGLE, -30, 30));
 
     spi_write_adv(REG_SROM_Enable, 0x1d);
 
@@ -177,7 +172,9 @@ bool pmw_check_signature(void) {
 
 report_pmw_t pmw_read_burst(void) {
     if (!_inBurst) {
-        //uprintf("burst on");
+#ifdef CONSOLE_ENABLE
+        dprintf("burst on");
+#endif
         spi_write_adv(REG_Motion_Burst, 0x00);
         _inBurst = true;
     }
@@ -202,13 +199,13 @@ report_pmw_t pmw_read_burst(void) {
 
     spi_stop();
 
-#ifdef SPI_DEBUG
+#ifdef CONSOLE_ENABLE
     print_byte(data.motion);
     print_byte(data.dx);
     print_byte(data.mdx);
     print_byte(data.dy);
     print_byte(data.mdy);
-    uprintf("\n");
+    dprintf("\n");
 #endif
 
     data.isMotion    = (data.motion & 0x80) != 0;
@@ -216,7 +213,7 @@ report_pmw_t pmw_read_burst(void) {
     data.dx |= (data.mdx << 8);
     data.dx = data.dx * -1;
     data.dy |= (data.mdy << 8);
-    // data.dy = data.dy * -1;
+    data.dy = data.dy * -1;
 
     spi_stop();
 

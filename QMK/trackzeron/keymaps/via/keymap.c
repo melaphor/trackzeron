@@ -1,4 +1,6 @@
-/* Copyright 2020 MK
+/* Copyright 2020 Christopher Courtney, aka Drashna Jael're  (@drashna) <drashna@live.com>
+ * Copyright 2019 Sunjun Kim
+ * Copyright 2020 Ploopy Corporation
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -15,59 +17,54 @@
  */
 #include QMK_KEYBOARD_H
 
-#define LCLK M(0)
-#define RCLK M(1)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-     [0] = LAYOUT(
-        KC_PAUSE, KC_TAB,
+    [0] = LAYOUT( KC_PAUSE, KC_TAB,
         KC_KP_MINUS, KC_KP_ASTERISK, KC_KP_SLASH, KC_KP_0,
         KC_KP_7, KC_KP_8, KC_KP_9, KC_KP_PLUS,
- KC_KP_4, LCLK, RCLK, KC_KP_5, KC_KP_6,
- 	    KC_KP_1, KC_KP_2, KC_KP_3, KC_KP_DOT),
- [1] =  LAYOUT( \
-      KC_TRNS, KC_TRNS,           \
-      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, \
-      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, \
-KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, \
-      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS \
-),
-[2] =  LAYOUT( \
-     KC_TRNS, KC_TRNS,           \
-     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, \
-     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, \
-KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, \
-     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS \
-),
-[3] =  LAYOUT( \
-     KC_TRNS, KC_TRNS,           \
-     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, \
-     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, \
-KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, \
-     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS \
-),
-
+KC_KP_4, KC_BTN1, KC_BTN2, KC_KP_5, KC_KP_6,
+ 	    KC_KP_1, KC_KP_2, KC_KP_3, KC_KP_DOT 
+ 	    ),
+    [1] = LAYOUT( _______, _______,           
+      _______, _______, _______, _______, 
+      _______, _______, _______, _______, 
+_______, _______, _______, _______, _______, 
+      _______, _______, _______, _______ 
+      ),
+    [2] = LAYOUT( _______, _______,           
+      _______, _______, _______, _______, 
+      _______, _______, _______, _______, 
+_______, _______, _______, _______, _______, 
+      _______, _______, _______, _______ 
+      ),
+    [3] = LAYOUT( _______, _______,           
+      _______, _______, _______, _______, 
+      _______, _______, _______, _______, 
+_______, _______, _______, _______, _______, 
+      _______, _______, _______, _______ 
+      ),
+    [4] = LAYOUT( _______, _______,           
+      _______, _______, _______, _______, 
+      _______, _______, _______, _______, 
+_______, _______, _______, _______, _______, 
+      _______, _______, _______, _______ 
+      ),
+    [5] = LAYOUT( _______, _______,           
+      _______, _______, _______, _______, 
+      _______, _______, _______, _______, 
+_______, _______, _______, _______, _______, 
+      _______, _______, _______, _______ 
+      ),
+    [6] = LAYOUT( _______, _______,           
+      _______, _______, _______, _______, 
+      _______, _______, _______, _______, 
+_______, _______, _______, _______, _______, 
+      _______, _______, _______, _______ 
+      ),
+    [7] = LAYOUT( _______, _______,           
+      _______, _______, _______, _______, 
+      _______, _______, _______, _______, 
+_______, _______, _______, _______, _______, 
+      _______, _______, _______, _______ 
+      ),
 };
-
-
-
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  switch (keycode) {               
-    case LCLK:
-      if (record->event.pressed) {
-        register_code(KC_MS_BTN1);
-      } else {
-        unregister_code(KC_MS_BTN1);
-      }
-      break;
-     
-     case RCLK:
-      if (record->event.pressed) {
-        register_code(KC_MS_BTN2);
-      } else {
-        unregister_code(KC_MS_BTN2);
-      }
-      break; 
-  }
-  return true;
-}
