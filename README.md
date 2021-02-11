@@ -1,4 +1,4 @@
-# TRACKzeron: Adding trackball functionality to the Azeron Keypad
+# TRACKzeron: Adding trackball functionality to the [Azeron Keypad](https://www.azeron.eu/)
 
 This repository contains source code and prebuilt firmware files for a modified Azeron keypad.
 
