@@ -26,7 +26,7 @@ Also, using two keypads simultaneously isn’t officially supported by Azeron so
 
 ### Do you have a video where you’re playing with both keypads together?
 ~~No, I don’t. Sorry :(~~  
-Video is here: [https://youtu.be/LT7abxc7oYk](https://youtu.be/LT7abxc7oYk)
+Video is here: [https://youtu.be/LT7abxc7oYk](https://youtu.be/LT7abxc7oYk). There will be more on [my Twitch channel](https://twitch.tv/allphobic13)
 
 ## Notes
 
