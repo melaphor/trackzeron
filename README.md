@@ -43,11 +43,11 @@ Video is here: [https://youtu.be/LT7abxc7oYk](https://youtu.be/LT7abxc7oYk). The
 Ready-to-flash firmware files are here: [Prebuilt_hex](https://github.com/melaphor/trackzeron/tree/main/Prebuilt_hex)
 
 #### [AzeronTrackballMod (“reWASD” firmware)](https://github.com/melaphor/trackzeron/tree/main/AzeronTrackballMod)
-This is the firmware I usually use on my keypad. I use reWASD to remap.
+This is the firmware I usually use on my keypad. I use reWASD to remap. Based on [Billiam's code](https://gist.github.com/Billiam/ec4ccf967088edef36e67010839f3dd1#file-sherbet-ino)
 
 #### [AzeronXimAlt-trackballmod“ (JoyToKey” firmware)](https://github.com/melaphor/trackzeron/tree/main/AzeronXimAlt-trackballmod)
 
-It's a modified version of W11cE's Simple XIM Firmware. All buttons are joystick buttons. Intended for use with JoyToKey. May also still work with XIM but I haven’t tested that.
+It's a modified version of [W11cE's Simple XIM Firmware](https://github.com/W11cE/Azeron-Simplified-Firmware-for-XIM-Apex). All buttons are joystick buttons. Intended for use with JoyToKey. May also still work with XIM but I haven’t tested that.
 
 #### [QMK Firmware](https://github.com/melaphor/trackzeron/tree/main/QMK)
 [QMK](https://qmk.fm/) port. Includes support for the [VIA configurator](https://caniusevia.com/).
@@ -82,7 +82,7 @@ Load into VIA using *Design > Load Draft Definition*
 - precision tweezers
 - Soldering Iron & solder
 - Solder Wick / desoldering tool
-- 30 AWG hook up wire (I reused the wires from the thumb assembly)
+- ~~30~~ 28 AWG hook up wire (I reused the wires from the thumb assembly)
 - wire stripper
 - wire cutters
 - M2.5 machine screws x2 (idk what length.. I used the thumb rail screws)
@@ -92,14 +92,14 @@ Load into VIA using *Design > Load Draft Definition*
 
 ![Azeron-unchanged](https://user-images.githubusercontent.com/16569424/107108978-5b8f1f00-680a-11eb-86c0-2a26af66000b.png)
     
--   Disconnect the thumbstick, thumb button and D-pad from the Teensy board and grounding block.  
+-   Disconnect the thumbstick, ~~thumb button~~ and D-pad from the Teensy board and grounding block.  
     ![Azeron-removethumb](https://user-images.githubusercontent.com/16569424/107108984-706bb280-680a-11eb-9773-adbbb86909cb.png)
     
 - Remove the thumb assembly and thumb button from the rails.
 - Print the trackball assembly.   
 - Push the ceramic ball bearings into the trackball assembly.   
 - Fit the trackball assembly into the Azeron thumb rail.    
-- Strip and tin 30 AWG hookup wire OR desolder the wires attached to the thumbstick and D-pad. Need 6 wires.
+- Strip and tin ~~30~~ 28 AWG hookup wire OR desolder the wires attached to the thumbstick and D-pad. Need 6 wires.
 - Solder wires to the PMW3360 sensor pins (The other two are not used):
 	- GD
 	- SS    
@@ -113,7 +113,7 @@ Load into VIA using *Design > Load Draft Definition*
 - Disconnect the pinky and ring finger switches from the Teensy board (leave the ground [black] wires connected to the grounding block)    
 - Reconnect the pinky and ring finger switches as follows:
    	-   Ring finger:
-		- High flick/green wire: F7
+	    - High flick/green wire: F7
 	    - Flick/red wire: F6
 	    - Push/orange wire: F5
 	    - Pull/purple wire: F4
