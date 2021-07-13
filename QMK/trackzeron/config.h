@@ -22,8 +22,8 @@
 #include "config_common.h"
 
 /* USB Device descriptor parameter */
-#define VENDOR_ID    0x6d6b //MK
-#define PRODUCT_ID   0x747a //TZ 
+#define VENDOR_ID    0x16d0
+#define PRODUCT_ID   0x10aa
 #define DEVICE_VER   0x0001
 #define MANUFACTURER MK
 #define PRODUCT      TRACKzeron
