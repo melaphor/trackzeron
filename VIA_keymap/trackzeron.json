@@ -1,7 +1,7 @@
 {
   "name": "TRACKzeron",
-  "vendorId": "0x6D6B",
-  "productId": "0x747A",
+  "vendorId": "0x16D0",
+  "productId": "0x10AA",
   "lighting": "none",
   "matrix": {"rows": 5, "cols": 5},
   "layouts": {
