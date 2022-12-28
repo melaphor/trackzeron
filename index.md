@@ -1,37 +1,126 @@
-## Welcome to GitHub Pages
+# TRACKzeron: Adding trackball functionality to the [Azeron Keypad](https://www.azeron.eu/)
 
-You can use the [editor on GitHub](https://github.com/melaphor/trackzeron/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+![](https://user-images.githubusercontent.com/16569424/107110059-db20ec00-6812-11eb-9fe6-563b27339a3a.jpg)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Notes
 
-### Markdown
+-   This mod has no official Azeron support.
+-   I had to compile custom firmware to make the trackball work, so this modded keypad does not work with the official Azeron software.
+-   This mod requires soldering   
+-   Modifying your device always comes with risk attached. I’m sharing what worked for me and offer no guarantees.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Guide
 
-```markdown
-Syntax highlighted code block
+### Parts
+- [Azeron Keypad](https://www.azeron.eu/) (Classic or Compact)
+- [PMW3360 Motion Sensor](https://www.tindie.com/products/jkicklighter/pmw3360-motion-sensor/)   
+- [3D printed trackball holder assembly](https://www.thingiverse.com/thing:4667691)
+- 52mm ball: (I use the ball from an [Elecom Huge](https://elecomus.com/web/product/3271/) trackball, but I have verified that a 2 <sup>1</sup>/<sub>16</sub> inch[52.5mm] [snooker/billiard ball](https://www.johnparrottsports.com/snooker/snooker-balls/#category175) works)
+- Three (3) [3mm ceramic bearing balls](https://www.bcprecision.com/products/3mm-zro2-zirconium-oxide-ceramic-ball-bearings-g5) 
+- [28 AWG wire](https://www.mouser.com/c/wire-cable/hook-up-wire/?wire%20gauge%20-%20awg=28%20AWG) (I reused the wires from the thumb assembly; you'll need solder wick or a desoldering tool to reuse wire)
+-  2 to 4 [M2.5x10 machine screws](https://store.azeron.eu/index.php?route=product/product&path=62&product_id=82)
+- 2 M2.5 [hex nuts](https://www.mcmaster.com/nuts/hex-nuts/) if using the updated model
+### Tools
+- screwdrivers: hex, Philips, and flat heads 
+- precision tweezers
+- Soldering Iron & solder
+- wire stripper
+- wire cutters
 
-# Header 1
-## Header 2
-### Header 3
+### Preparing
+- 3D print the trackball assembly.   
+- Push the ceramic ball bearings into the trackball assembly.   
+- Strip and tin 7-9 inches of 28 AWG hookup wire OR desolder the wires attached to the thumbstick and D-pad. Need 6 wires.
+- Solder wires to the PMW3360 sensor pins (The other two are not used):
+	- GD
+	- SS    
+	- SC
+	- MO
+	- MI    
+	- VI 
 
-- Bulleted
-- List
+### Rewire the Azeron
+-   Remove the Azeron palmrest to reveal the Teensy Board
 
-1. Numbered
-2. List
+![Azeron-unchanged](https://user-images.githubusercontent.com/16569424/107108978-5b8f1f00-680a-11eb-86c0-2a26af66000b.png)   
 
-**Bold** and _Italic_ and `Code` text
+- Disconnect the thumbstick and D-pad from the Teensy board and grounding block.  
+- Remove the thumbstick assembly from the rail.
 
-[Link](url) and ![Image](src)
-```
+![Azeron-removethumb](https://user-images.githubusercontent.com/16569424/107108984-706bb280-680a-11eb-9773-adbbb86909cb.png)
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+- Disconnect the pinky and ring finger switches from the Teensy board (**leave the ground [black] wires connected to the grounding block**)    
+- Reconnect the pinky and ring finger switches as follows:
+   	-   Ring finger:
+	    - High flick/green wire: F7
+	    - Flick/red wire: F6
+	    - Push/orange wire: F5
+	    - Pull/purple wire: F4
+	-   Pinky finger:
+	    - High flick/green wire: F3
+	    - Flick/red wire: F2
+	    - push/orange wire: F1
+	    - pull/purple wire: F0
 
-### Jekyll Themes
+ 
+![Azeron-movepinkyring](https://user-images.githubusercontent.com/16569424/107109037-e4a65600-680a-11eb-983f-14ca71fb90f0.png)
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/melaphor/trackzeron/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
-### Support or Contact
+### Connect the PMW3360 Sensor:
+-   Connect the sensor to the Teensy board as follows:
+	- GD: GND    
+	- SS: B0
+	- SC: B1
+	- MO: B2
+	- MI: B3
+	- VI: +5V
+    
+![Azeron-addsensor](https://user-images.githubusercontent.com/16569424/107109075-17e8e500-680b-11eb-8602-91806c507511.png)
+![Sensor-Teensy](https://user-images.githubusercontent.com/16569424/107109078-1ae3d580-680b-11eb-8402-30c224dd913e.png)
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+**NOTE:** It's important for the switches and sensor to be connected ***exactly as indicated*** or the device will not work.
+- Attach the sensor to the trackball assembly. 
+- Fit the trackball assembly to the Azeron thumb rail.   
+- Reattach the palmrest
+- Place ball in cup.
+- Load firmware HEX file using the Teensy Loader.
+- Enjoy trackball keypad
+
+## Default keybinds:
+
+Using "AzeronTrackballMod" firmware or QMK firmware:
+
+![TRACKzeron default keymap](https://user-images.githubusercontent.com/16569424/107109080-23d4a700-680b-11eb-86ef-2168594ed880.png)
+
+  
+
+## Joystick Button Assignments:
+
+Using "AzeronXimAlt-trackballmod" firmware:
+
+![TRACKzeron JoyToKey](https://user-images.githubusercontent.com/16569424/107109082-28995b00-680b-11eb-82fe-a649f6bf350d.png)
+
+## FAQs:
+
+### “TRACKzeron”?
+Trackball + Azeron = TRACKzeron.
+
+### Will this work on the Azeron Cyborg or Cyborg Compact model?
+Not yet. The Cyborg models are wired differently. I've upgraded to dual Cyborgs and am in the process of figuring out the rewiring
+
+### How did you add the trackball?
+See the [guide](#guide).
+
+### How does this work in the Azeron Software?
+***This mod is not compatible with the official Azeron Software.*** You will need to use a different software to set your keybinds. I have used reWASD and JoyToKey.
+
+### How do you use the Azeron Software with two keypads at once?
+Using two keypads simultaneously isn’t officially supported by the Azeron software (yet? seems like they're working on that), even if they’re both stock firmware/not modified, but a workaround for two unmodified keypads is to plug in one keypad, set the keybinds, then unplug. Plug in the second keypad and set those keybinds. You won't be able to change the keybinds while they're both plugged in, but they should work in-game.
+
+
+### Do you have a video where you’re playing with both keypads together?
+Yes; there's a [YouTube clip](https://youtu.be/LT7abxc7oYk) of me playing Mass Effect Andromeda,
+and some of me playing Borderlands on [my Twitch channel](https://twitch.tv/allphobic13).
+
+### Can you make me one?
+Possibly, but in my opinion it will be more cost effective for you to DIY or find someone local to assist you.
