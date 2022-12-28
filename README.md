@@ -4,12 +4,43 @@ This repository contains source code and prebuilt firmware files for a modified 
 
 ![](https://user-images.githubusercontent.com/16569424/107110059-db20ec00-6812-11eb-9fe6-563b27339a3a.jpg)
 
+## Only for Classic and Compact models with TEENSY++ 2.0 mainboards
+
+**This does not work with the Cyborg/Cyborg compact models.** It is for Azeron devices that use the Teensy++ 2.0 (green) mainboard. The Teensy++ 2.0 was discontinued in 2021, and Azeron started shipping models with their proprietary ARM/STM32-based (black) mainboard in mid-2022. I will not be adding support for the Azeron proprietary mainboards and there is no ETA on a mod for Cyborg models with Teensy mainboards.
+
 ## Notes
 
 -   This mod has no official Azeron support.
 -   I had to compile custom firmware to make the trackball work, so this modded keypad does not work with the official Azeron software.
--   This mod requires soldering   
+-   This mod requires soldering. (No soldering to anything on the keypad, just the sensor module)   
 -   Modifying your device always comes with risk attached. I’m sharing what worked for me and offer no guarantees.
+
+## FAQs:
+
+### “TRACKzeron”?
+Trackball + Azeron = TRACKzeron.
+
+### Will this work on my device with a black mainboard?
+The firmware will not work. The new black mainboards have a different chip. The firmware was not designed for it. I cannot confirm whether the new mainboard can be rewired to accommodate the sensor. 
+
+### Will this work on the Azeron Cyborg or Cyborg Compact model?
+No. The Cyborg models are wired differently. Unfortunately I have not figured out the rewiring and I do not have an ETA on if/when the Cyborg mod will be done.
+
+### How did you add the trackball?
+See the [guide](#guide).
+
+### How does this work in the Azeron Software?
+***This mod is not compatible with the official Azeron Software.*** You will need to use a different software to set your keybinds. I have used reWASD and JoyToKey.
+
+### How do you use the Azeron Software with two keypads at once?
+Using two keypads simultaneously isn’t officially supported by the Azeron software (yet? seems like they're working on that), even if they’re both stock firmware/not modified, but a workaround for two unmodified keypads is to plug in one keypad, set the keybinds, then unplug. Plug in the second keypad and set those keybinds. You won't be able to change the keybinds while they're both plugged in, but they should work in-game.
+
+### Do you have a video where you’re playing with both keypads together?
+Yes; there's a [YouTube clip](https://youtu.be/LT7abxc7oYk) of me playing Mass Effect Andromeda,
+and some of me playing Borderlands on [my Twitch channel](https://twitch.tv/allphobic13).
+
+### Can you make me one?
+No.
 
 ## Guide
 
@@ -87,42 +118,3 @@ This repository contains source code and prebuilt firmware files for a modified 
 - Place ball in cup.
 - Load firmware HEX file using the Teensy Loader.
 - Enjoy trackball keypad
-
-## Default keybinds:
-
-Using "AzeronTrackballMod" firmware or QMK firmware:
-
-![TRACKzeron default keymap](https://user-images.githubusercontent.com/16569424/107109080-23d4a700-680b-11eb-86ef-2168594ed880.png)
-
-  
-
-## Joystick Button Assignments:
-
-Using "AzeronXimAlt-trackballmod" firmware:
-
-![TRACKzeron JoyToKey](https://user-images.githubusercontent.com/16569424/107109082-28995b00-680b-11eb-82fe-a649f6bf350d.png)
-
-## FAQs:
-
-### “TRACKzeron”?
-Trackball + Azeron = TRACKzeron.
-
-### Will this work on the Azeron Cyborg or Cyborg Compact model?
-Not yet. The Cyborg models are wired differently. I've upgraded to dual Cyborgs and am in the process of figuring out the rewiring
-
-### How did you add the trackball?
-See the [guide](#guide).
-
-### How does this work in the Azeron Software?
-***This mod is not compatible with the official Azeron Software.*** You will need to use a different software to set your keybinds. I have used reWASD and JoyToKey.
-
-### How do you use the Azeron Software with two keypads at once?
-Using two keypads simultaneously isn’t officially supported by the Azeron software (yet? seems like they're working on that), even if they’re both stock firmware/not modified, but a workaround for two unmodified keypads is to plug in one keypad, set the keybinds, then unplug. Plug in the second keypad and set those keybinds. You won't be able to change the keybinds while they're both plugged in, but they should work in-game.
-
-
-### Do you have a video where you’re playing with both keypads together?
-Yes; there's a [YouTube clip](https://youtu.be/LT7abxc7oYk) of me playing Mass Effect Andromeda,
-and some of me playing Borderlands on [my Twitch channel](https://twitch.tv/allphobic13).
-
-### Can you make me one?
-Possibly, but in my opinion it will be more cost effective for you to DIY or find someone local to assist you.
