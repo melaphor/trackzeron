@@ -4,7 +4,7 @@
 
 ## Only for Classic and Compact models with TEENSY++ 2.0 mainboards
 
-**This does not work with the Cyborg/Cyborg compact models.** It is for Azeron devices that use the Teensy++ 2.0 (green) mainboard. The Teensy++ 2.0 was discontinued in 2021, and Azeron started producing models with their proprietary ARM/STM32-based (black) mainboard in late-2022. I will not be adding support for the Azeron proprietary mainboards and there is no ETA on a mod for Cyborg models with Teensy mainboards.
+**This does not work with the Cyborg/Cyborg compact models.** It is for Azeron devices that use the Teensy++ 2.0 (green) mainboard. The Teensy++ 2.0 was discontinued in 2021, and Azeron started producing models with their proprietary ARM/STM32-based (black) mainboard in late-2022. I will not be adding support for the Azeron proprietary mainboards or for Cyborg models with Teensy mainboards. [GitHub user chrisistansell has already done the work to mod the Teensy Cyborg](https://github.com/chrisistansell/trackzeron)
 
 ## Notes
 
