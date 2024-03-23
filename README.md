@@ -1,3 +1,12 @@
+## ***Update 2024 March 23:* Archiving this repo** 
+I was very passionate about this project when I started it in 2020, but I am no longer working on it. 
+
+Both Azeron and QMK have made leaps and bounds in the past few years, so this incarnation of the project is behind the times. 
+
+I think it's well past time for me to officially pass the torch to [chrisistansell](https://github.com/chrisistansell). He's adapted it for the Cyborg ***and*** adjusted the holder for a 34mm trackball, which is way more common and easily accessible than the 52mm* I used. 
+
+**Note (because it's been asked often): I used 52mm because I wanted a very large trackball and was only considering my personal use when I started the project.*
+
 # TRACKzeron: Adding trackball functionality to the [Azeron Keypad](https://www.azeron.eu/)
 
 This repository contains source code and prebuilt firmware files for a modified Azeron keypad.
@@ -6,7 +15,7 @@ This repository contains source code and prebuilt firmware files for a modified 
 
 ## Only for Classic and Compact models with TEENSY++ 2.0 mainboards
 
-**This does not work with the Cyborg/Cyborg compact models.** It is for Azeron classic devices that use the Teensy++ 2.0 (green) mainboard. The Teensy++ 2.0 was discontinued in 2021, and Azeron started producing models with their proprietary ARM/STM32-based (black) mainboard in late-2022. I will not be adding support for the Azeron proprietary mainboards ~~and there is no ETA on a mod for Cyborg models with Teensy mainboards.~~ [Check out this fork for Teensy-based Cyborg support.](https://github.com/chrisistansell/trackzeron)
+**This does not work with the Cyborg/Cyborg compact models.** It is for Azeron classic devices that use the Teensy++ 2.0 (green) mainboard. The Teensy++ 2.0 was discontinued in 2021, and Azeron started producing models with their proprietary ARM/STM32-based (black) mainboard in late-2022. I will not be adding support for the Azeron proprietary mainboards ~~and there is no ETA on a mod for Cyborg models with Teensy mainboards.~~ [Check out chrisistansell's fork for Teensy-based Cyborg support.](https://github.com/chrisistansell)
 
 ## Notes
 
